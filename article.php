@@ -1,7 +1,7 @@
 <?php
     include 'header.php';
     session_start();
-
+    error_reporting(0);
     include 'database.php';
     $database = new Database();
     $article = $database->getArticleByID($_GET['articleid']);

@@ -7,7 +7,7 @@ $database = new Database();
 
 include 'header.php';
 // If an error is executed we suppress every warning/error so the user doesn't know of backend info
-//error_reporting(0);
+error_reporting(0);
 // This function works only for the current system of points
 // Legacy systems must have another function to get the result
 // Also this function does not take into consideration fastest lap points

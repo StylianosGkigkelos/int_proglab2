@@ -2,6 +2,7 @@
 session_start();
 include 'header.php';
 include 'database.php';
+error_reporting(0);
 $database = new Database();
 $drivers = $database->getCurrentDrivers();
 

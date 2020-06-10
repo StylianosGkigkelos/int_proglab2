@@ -3,7 +3,7 @@ session_start();
 
 include 'database.php';
 $database = new Database();
-
+error_reporting(0);
 include 'header.php';
 
 ?>

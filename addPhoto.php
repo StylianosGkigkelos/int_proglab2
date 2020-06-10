@@ -4,6 +4,7 @@ include 'Database.php';
 if (!isset($_SESSION['userid']) || $_SESSION['userid']=="" || $_SESSION['userstatus'] != 'ADMIN') {
     header("Location: index.php");
 }
+error_reporting(0);
 include 'header.php';
 ?>
 

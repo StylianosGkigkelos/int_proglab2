@@ -2,6 +2,7 @@
 session_start();
 include 'Database.php';
 include 'header.php';
+error_reporting(0);
 ?>
 
 
