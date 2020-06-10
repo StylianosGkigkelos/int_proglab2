@@ -45,11 +45,23 @@
                             echo 'Hi ' . $_SESSION['first_name'];
                         echo '</a>';
                         echo '<div class="dropdown-menu">';
-                            echo '<a id="logout" class="dropdown-item" href="index.php">Logout</a>';
-                        echo '</div>';
+                                if (isset($_SESSION['userstatus'])){
+                                    if($_SESSION['userstatus']=='ADMIN'){
+                                        echo '<a id="addArticle" class="dropdown-item" href="addArticle.php">Add Article</a>';
+                                        echo '<a id="addPhoto" class="dropdown-item" href="addPhoto.php">Add Photo</a>';
+
+                                    }
+                                }
+                                echo '<a id="logout" class="dropdown-item" href="logout.php">Logout</a>';
+                         echo '</div>';
                     echo '</li>';
                 echo '</ul>';
 
+            }
+            else {
+                echo '<ul class="navbar-nav justify-content-end mr-5">';
+                echo    '<a id="login" class="nav-link" href="login.php">Login</a>';
+                echo '</ul>';
             }
 
         ?>

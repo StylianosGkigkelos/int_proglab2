@@ -6,6 +6,8 @@ session_start();
 //    header("Location: login.php");
 //}
 
+//TODO ATHLETE, ADMIN PAGE
+
 include 'database.php';
 $database = new Database();
 
@@ -19,7 +21,7 @@ include 'header.php'
 
 
 <head>
-    <title>Title</title>
+    <title>Icsd17029</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
@@ -33,36 +35,34 @@ include 'header.php'
 <div id="main" class="main-container">
     <div class="jumbotron jumbo-fluid">
         <div class="container">
-            <h2>The Story of the Prancing Horse<br>
-                <small class="text-muted">A short view back to the past</small>
+            <h2>Ferrari<br>
+                <small class="text-muted">The unofficial site</small>
             </h2>
         </div>
     </div>
 
-<!--    FIXME:new photos-->
     <div id="cc" class="container">
         <div id ="mycarousel" class="carousel slide" data-ride="carousel">
-            <ol class="carousel-indicators">
-                <li data-target="#mycarousel" data-slide-to="0" class="active"></li>
-                <li data-target="#mycarousel" data-slide-to="1"></li>
-            </ol>
             <div class="carousel-inner text-center">
-                <div class="carousel-item active" data-interval="10000">
-                    <img src="resources/1.png" class="img-fluid rounded w-50 h-50 responsive" alt="..." >
-                    <div class="carousel-caption d-none d-md-block">
-                        <h5>New Order</h5>
-                        <p>Age of Consent</p>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <img src="resources/2.png" class="img-fluid rounded w-50 h-50 responsive" alt="...">
-                    <div class="carousel-caption d-none d-md-block">
-                        <h5>Joy Division</h5>
-                        <p>Atmosphere</p>
-                    </div>
-                </div>
-            </div>
+                <?php
+                $photos = $database->getAllPhotos();
+                $first = 0;
+                foreach ($photos as $photo){
+                    if ($first==0){
+                        echo '<div class="carousel-item active" data-interval="10000">';
+                        echo '   <img src="'.$photo['photo_source'].'" class="img-fluid rounded w-80 h-80 responsive" alt="..." >';
+                        echo '</div>';
+                        $first = 1;
+                    }
+                    else {
+                        echo '<div class="carousel-item" data-interval="10000">';
+                        echo '   <img src="'.$photo['photo_source'].'" class="img-fluid rounded w-80 h-80 responsive" alt="..." >';
+                        echo '</div>';
+                    }
+                }
 
+            ?>
+            </div>
             <a class="carousel-control-prev" href="#mycarousel" role="button" data-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                 <span class="sr-only">Previous</span>
@@ -84,20 +84,6 @@ include 'header.php'
 <?php
 include 'footer.php';
 ?>
-<!--<footer class="page-footer font small">-->
-<!--    <div class="py-4 bg-light mt-auto">-->
-<!--        <div class="container-fluid">-->
-<!--            <div class="d-flex align-items-center justify-content-between small">-->
-<!--                <div class="text-muted">Copyright &copy; Your Website 2019</div>-->
-<!--                <div>-->
-<!--                    <a href="#">Privacy Policy</a>-->
-<!--                    &middot;-->
-<!--                    <a href="#">Terms &amp; Conditions</a>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--    </div>-->
-<!--</footer>-->
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"

@@ -4,7 +4,6 @@
 
     include 'database.php';
     $database = new Database();
-    //FIXME: post article
     $article = $database->getArticleByID($_GET['articleid']);
     if (isset($article)) {
         echo '<h2 class="text-center">' . $article['title'] . "<br></h2>";

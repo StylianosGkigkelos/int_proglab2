@@ -60,6 +60,7 @@ class Database
             $userid = $row['id'];
             $_SESSION['userid'] = $userid;
             $_SESSION['first_name'] = $row['first_name'];
+            $_SESSION['userstatus'] = $row['status'];
             header("Location: index.php");
         } else {
             $_SESSION['status'] = 'danger';
@@ -137,6 +138,30 @@ class Database
             return null;
     }
 
+    public function getUpcomingRaces(){
+        $sql = "SELECT * FROM races WHERE isupcoming= TRUE";
+        $result = $this->conn->query($sql);
+        while($row = $result->fetch_assoc())
+        {
+            // Append row to rows
+            $rows[] = $row;
+        }
+        if (isset($rows))
+            return $rows;
+        else
+            return null;
+    }
+
+    public function getRaceFromID($raceid) {
+        $sql = "SELECT * FROM races WHERE id = $raceid LIMIT 1";
+        $result = $this->conn->query($sql);
+        $result = $result->fetch_assoc();
+        if (isset($result)) {
+            return $result;
+        }
+        return null;
+    }
+
     public function getStandingsFromRace($raceid) {
         $sql = "SELECT * FROM standings WHERE raceid = $raceid ORDER BY pos ASC";
         $result = $this->conn->query($sql);
@@ -177,6 +202,44 @@ class Database
         if (isset($result))
             return $result;
         return null;
+    }
+
+    public function getAllPhotos() {
+        $sql = "SELECT * FROM photos";
+        $result = $this->conn->query($sql);
+
+        while($row = $result->fetch_assoc())
+        {
+            $rows[] = $row;
+        }
+        if (isset($rows))
+            return $rows;
+        else
+            return null;
+    }
+
+    public function addArticle($title, $message, $photo_source){
+        $sql = "INSERT INTO articles (title, message, photo_source) 
+                VALUES ('$title', '$message', '$photo_source') ";
+        $result = $this->conn->query($sql);
+        if ($result){
+            header("Location: index.php?msg=success");
+        }
+        else {
+            header("Location: index.php?msg=fail");
+        }
+    }
+
+    public function addPhoto($photo_source, $category){
+        $sql = "INSERT INTO photos (photo_source, category) 
+                VALUES ('$photo_source', '$category') ";
+        $result = $this->conn->query($sql);
+        if ($result){
+            header("Location: index.php?msg=success");
+        }
+        else {
+            header("Location: index.php?msg=fail");
+        }
     }
 
 
