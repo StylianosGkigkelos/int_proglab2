@@ -1,0 +1,87 @@
+* {
+    box-sizing: border-box;
+}*:before,
+ *:after {
+     box-sizing: border-box;
+ }
+
+ .navbar-dark{
+     background: #101010;
+ }
+
+/*.navbar-collapse.collapse.in {*/
+/*    display: inline-block;*/
+/*}*/
+
+html,body { height: 100%;  margin: 0; }
+
+
+/*html,*/
+/*body {*/
+/*    height: 100%;*/
+/*    position: relative;*/
+/*}*/
+
+
+
+body {
+    display: table;
+    width: 100%;
+}
+
+
+.main-container{
+    min-height: 100vh; /* will cover the 100% of viewport */
+    overflow: hidden;
+    display: block;
+    position: relative;
+    padding-bottom: 100px; /* height of your footer */
+}
+
+
+.carousel-control-next,
+.carousel-control-prev {
+    filter: invert(70%);
+}
+
+.table {
+    border-radius: 5px;
+    width: 50%;
+    margin: 0px auto;
+    float: none;
+}
+
+footer {
+    height: 50px;
+    display: table-row;
+    background: PapayaWhip;
+}
+
+
+.cardNews {
+    /* Add shadows to create the "card" effect */
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    margin: 1%;
+    /*display: inline-grid;*/
+}
+
+.cardManagement {
+    width:300px;
+    height: 350px;
+    /* Add shadows to create the "card" effect */
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    margin: 1%;
+    /*display: inline-grid;*/
+}
+
+/* On mouse-over, add a deeper shadow */
+.cardManagement:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+/* Add some padding inside the card container */
+.container {
+    padding: 2px 16px;
+}
