@@ -34,6 +34,9 @@
             <li>
                 <a class="nav-link" href="management.php">Management </a>
             </li>
+            <li>
+                <a class="nav-link" href="halloffame.php">Management </a>
+            </li>
             <li class="nav-item">
                 <a class="nav-link"  href="contact_us.php" >Contact us</a>
             </li>

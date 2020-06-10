@@ -269,5 +269,19 @@ class Database
         }
     }
 
+    public function getCardedUsers(){
+        $sql = "SELECT first_name, registration_date FROM users WHERE status ='REGISTEREDCARD'";
+        $result = $this->conn->query($sql);
+//        return $result;
+        while($row = $result->fetch_assoc())
+        {
+            $rows[] = $row;
+        }
+        if (isset($rows))
+            return $rows;
+        else
+            return null;
+    }
+
 
 }
