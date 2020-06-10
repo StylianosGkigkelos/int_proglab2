@@ -208,41 +208,6 @@ function calculateChampionship($year)
 
     }
 
-//    foreach ($races as $race) {
-//        echo '<h2 class="text-center">'.$race['name']. "<br></h2>";
-//        // Standing for specific race
-//        echo '<table class="table table-striped table-dark table-sm w-50 justify-content-center">';
-//        echo    '<thead class="thead-dark">';
-//        echo        '<tr>';
-//        echo            '<th scope="col">'.'Position'.'</th>';
-//        echo            '<th scope="col">'.'Driver'.'</th>';
-//        echo            '<th scope="col">'.'Nationality'.'</th>';
-//        echo            '<th scope="col">'.'Constructor'.'</th>';
-//        echo            '<th scope="col">'.'Points'.'</th>';
-//        echo        '</tr>';
-//        echo    '</thead>';
-//        echo    '<tbody>';
-//
-//        $standings = $database->getStandingsFromRace($race['id']);
-//        if (isset($standings)) {
-//            foreach ($standings as $standing){
-//                $driver = $database->getDriverById($standing['driverid']);
-//
-//                echo '<tr>';
-//                echo    '<th scope="row">'.$standing['pos'].'</th>';
-//                echo    '<td>'.$driver['name'].'</td>';
-//                echo    '<td>'.$driver['nationality'].'</td>';
-//                $constructor = $database->getConstructor($driver['constrID']);
-//                echo    '<td>'.$constructor['name'].'</td>';
-//                echo    '<td>'.getPoints($standing['pos']).'</td>';
-//                echo '</tr>';
-//            }
-//        }
-//        echo    '</tbody>';
-//        echo '</table>';
-//
-//    }
-
 
 
     ?>

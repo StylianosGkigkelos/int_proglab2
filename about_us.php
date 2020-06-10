@@ -32,7 +32,7 @@ include 'header.php';
             when Ferrari claimed a then unprecedented five consecutive title doubles,
             securing their status as the most successful and decorated team in F1 history...
         </p>
-        <!--FIXME: Enter photo and fix text-->
+
         <p>Nunc vitae diam et quam accumsan scelerisque at sit amet arcu. Sed sapien neque, scelerisque in eleifend at,
             pretium nec mauris. Etiam feugiat ante felis. Aliquam interdum nunc sed libero varius consectetur et vitae
             enim. Integer venenatis tortor leo, non iaculis tellus rhoncus at. Sed vitae volutpat nulla, sit amet

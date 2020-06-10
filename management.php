@@ -14,7 +14,6 @@ include 'header.php';
 
     </head>
 
-    <!--FIXME: i am not inline-->
     <div id="main" class="main-container" style="padding-top: 50px">
         <div class="row">
             <div class="card cardManagement">

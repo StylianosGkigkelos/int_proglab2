@@ -242,5 +242,32 @@ class Database
         }
     }
 
+    public function getCurrentDrivers() {
+        $sql = "SELECT * FROM current_drivers";
+        $result = $this->conn->query($sql);
+
+        while($row = $result->fetch_assoc())
+        {
+            $rows[] = $row;
+        }
+        if (isset($rows))
+            return $rows;
+        else
+            return null;
+    }
+
+    public function updateDriver($id, $age, $car_number, $photo_source, $wins){
+        // In formula 1 car numbers do not change but for the sake of this exercise we alter them.
+        $sql = "UPDATE current_drivers SET age = $age, car_number = $car_number, 
+                photo_source = $photo_source, wins = $wins WHERE id = $id";
+        $result = $this->conn->query($sql);
+        if ($result){
+            header("Location: index.php?msg=success");
+        }
+        else {
+            header("Location: index.php?msg=fail");
+        }
+    }
+
 
 }

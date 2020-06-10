@@ -6,7 +6,7 @@
 
 <nav class="navbar navbar-expand-lg navbar-dark ">
     <a class="navbar-brand" href="index.php">
-    <i class="fa fa-globe"></i>My Team
+    <i class="fa fa-globe"></i>icsd17029
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navContent"
         aria-controls="navContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -20,16 +20,19 @@
                 <a class="nav-link"  href="news.php">News </a>
             </li>
             <li class="nav-item">
+                <a class="nav-link"  href="driversPage.php">Drivers</a>
+            </li>
+            <li class="nav-item">
                 <a class="nav-link"  href="standings.php">Standings </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link"  href="gallery.php">Gallery</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="about_us.php">About us </a>
             </li>
             <li>
                 <a class="nav-link" href="management.php">Management </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link"  href="profile.php" >Profile</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link"  href="contact_us.php" >Contact us</a>
